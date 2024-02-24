@@ -66,5 +66,20 @@ public class AppTest {
 
         LOG.info("Finalizando test de especie invalida");
     }
+    @Test
+    public void edadInvalida() {
+        LOG.info("Iniciado test de edad invalida");
+        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
+
+        assertEquals("Juan", mascota.nombre());
+        assertEquals("Caballo", mascota.especie());
+        assertEquals("Arabe", mascota.raza());
+        assertEquals(20, mascota.edad());
+        assertEquals("macho", mascota.genero());
+        assertEquals("cafe", mascota.color());
+        assertEquals(100, mascota.peso());
+
+        LOG.info("Finalizando test de edad invalida");
+    }
 
 }   
