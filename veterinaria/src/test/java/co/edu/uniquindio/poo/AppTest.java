@@ -8,6 +8,7 @@
 package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,7 @@ public class AppTest {
     /**
      * Rigorous Test :-)
      */
+
     @Test
     public void datosCompletos() {
         LOG.info("Iniciado test de datos completos");
@@ -36,50 +38,53 @@ public class AppTest {
 
         LOG.info("Finalizando test de datos completos");
     }
+
     @Test
     public void datosNulos() {
         LOG.info("Iniciado test de datos nulos");
-        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
 
-        assertEquals("Juan", mascota.nombre());
-        assertEquals("Caballo", mascota.especie());
-        assertEquals("Arabe", mascota.raza());
-        assertEquals(20, mascota.edad());
-        assertEquals("macho", mascota.genero());
-        assertEquals("cafe", mascota.color());
-        assertEquals(100, mascota.peso());
+        assertThrows(Throwable.class, () -> new Mascota(null, null, null, 20, null, null, 100));
+        
 
         LOG.info("Finalizando test de datos nulos");
     }
+
     @Test
-    public void especieInvalida() {
-        LOG.info("Iniciado test de especie invalida");
+    public void edadNegativa() {
+        LOG.info("Iniciado test de Edad negativa");
+
+        assertThrows(Throwable.class, () -> new Mascota("Juan","Caballo","Arabe", -20,"macho", "cafe", 100));
+
+        LOG.info("Finalizando test de edad negativa");
+    }
+
+    @Test
+    public void pesoNegativo() {
+        LOG.info("Iniciado test de peso negativo");
+
+        assertThrows(Throwable.class, () -> new Mascota("Juan","Caballo","Arabe", 20,"macho", "cafe", -100));
+
+        LOG.info("Finalizando test de peso negativo");
+    }
+
+    @Test
+    public void especieIncorrecta() {
+        LOG.info("Iniciado test de especie incorrecta");
         Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
 
         assertEquals("Juan", mascota.nombre());
-        assertEquals("Caballo", mascota.especie());
+        assertEquals("Tortuga", mascota.especie());
         assertEquals("Arabe", mascota.raza());
         assertEquals(20, mascota.edad());
         assertEquals("macho", mascota.genero());
         assertEquals("cafe", mascota.color());
         assertEquals(100, mascota.peso());
 
-        LOG.info("Finalizando test de especie invalida");
+        LOG.info("Finalizando test de datos completos");
     }
-    @Test
-    public void edadInvalida() {
-        LOG.info("Iniciado test de edad invalida");
-        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
 
-        assertEquals("Juan", mascota.nombre());
-        assertEquals("Caballo", mascota.especie());
-        assertEquals("Arabe", mascota.raza());
-        assertEquals(20, mascota.edad());
-        assertEquals("macho", mascota.genero());
-        assertEquals("cafe", mascota.color());
-        assertEquals(100, mascota.peso());
+    
+        
 
-        LOG.info("Finalizando test de edad invalida");
-    }
 
 }   
