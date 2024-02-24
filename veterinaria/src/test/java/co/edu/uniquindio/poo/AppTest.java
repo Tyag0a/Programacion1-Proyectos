@@ -7,6 +7,7 @@
  */
 package co.edu.uniquindio.poo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
@@ -21,9 +22,49 @@ public class AppTest {
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue() {
-        LOG.info("Iniciado test shouldAnswerWithTrue");
-        assertTrue(true);
-        LOG.info("Finalizando test shouldAnswerWithTrue");
+    public void datosCompletos() {
+        LOG.info("Iniciado test de datos completos");
+        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
+
+        assertEquals("Juan", mascota.nombre());
+        assertEquals("Caballo", mascota.especie());
+        assertEquals("Arabe", mascota.raza());
+        assertEquals(20, mascota.edad());
+        assertEquals("macho", mascota.genero());
+        assertEquals("cafe", mascota.color());
+        assertEquals(100, mascota.peso());
+
+        LOG.info("Finalizando test de datos completos");
     }
-}
+    @Test
+    public void datosNulos() {
+        LOG.info("Iniciado test de datos nulos");
+        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
+
+        assertEquals("Juan", mascota.nombre());
+        assertEquals("Caballo", mascota.especie());
+        assertEquals("Arabe", mascota.raza());
+        assertEquals(20, mascota.edad());
+        assertEquals("macho", mascota.genero());
+        assertEquals("cafe", mascota.color());
+        assertEquals(100, mascota.peso());
+
+        LOG.info("Finalizando test de datos nulos");
+    }
+    @Test
+    public void especieInvalida() {
+        LOG.info("Iniciado test de especie invalida");
+        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
+
+        assertEquals("Juan", mascota.nombre());
+        assertEquals("Caballo", mascota.especie());
+        assertEquals("Arabe", mascota.raza());
+        assertEquals(20, mascota.edad());
+        assertEquals("macho", mascota.genero());
+        assertEquals("cafe", mascota.color());
+        assertEquals(100, mascota.peso());
+
+        LOG.info("Finalizando test de especie invalida");
+    }
+
+}   
