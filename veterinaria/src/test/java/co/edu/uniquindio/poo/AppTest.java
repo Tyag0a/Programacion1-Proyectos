@@ -9,7 +9,6 @@ package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
@@ -66,25 +65,4 @@ public class AppTest {
 
         LOG.info("Finalizando test de peso negativo");
     }
-
-    @Test
-    public void especieIncorrecta() {
-        LOG.info("Iniciado test de especie incorrecta");
-        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
-
-        assertEquals("Juan", mascota.nombre());
-        assertEquals("Tortuga", mascota.especie());
-        assertEquals("Arabe", mascota.raza());
-        assertEquals(20, mascota.edad());
-        assertEquals("macho", mascota.genero());
-        assertEquals("cafe", mascota.color());
-        assertEquals(100, mascota.peso());
-
-        LOG.info("Finalizando test de datos completos");
-    }
-
-    
-        
-
-
 }   

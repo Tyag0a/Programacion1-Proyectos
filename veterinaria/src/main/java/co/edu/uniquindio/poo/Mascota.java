@@ -12,4 +12,6 @@ public record Mascota(String nombre, String especie,String raza, int edad, Strin
         assert peso >= 0;
     
      }  
+     
+
 }
