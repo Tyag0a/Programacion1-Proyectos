@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
+ * test del estudiante
  */
 public class AppTest {
     private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
@@ -25,15 +26,15 @@ public class AppTest {
     @Test
     public void datosCompletos() {
         LOG.info("Iniciado test de datos completos");
-        Mascota mascota = new Mascota("Juan","Caballo", "Arabe", 20, "macho", "cafe", 100);
-
-        assertEquals("Juan", mascota.nombre());
-        assertEquals("Caballo", mascota.especie());
-        assertEquals("Arabe", mascota.raza());
-        assertEquals(20, mascota.edad());
-        assertEquals("macho", mascota.genero());
-        assertEquals("cafe", mascota.color());
-        assertEquals(100, mascota.peso());
+        Mascota mascota = new Mascota("Juan", "Caballo", "Arabe", 20, "macho", "cafe", 100,"9");
+        
+        assertEquals("Juan", mascota.nombre);
+        assertEquals("Caballo", mascota.especie);
+        assertEquals("Arabe", mascota.raza);
+        assertEquals(20, mascota.edad);
+        assertEquals("macho", mascota.genero);
+        assertEquals("cafe", mascota.color);
+        assertEquals(100, mascota.peso);
 
         LOG.info("Finalizando test de datos completos");
     }
@@ -42,7 +43,7 @@ public class AppTest {
     public void datosNulos() {
         LOG.info("Iniciado test de datos nulos");
 
-        assertThrows(Throwable.class, () -> new Mascota(null, null, null, 20, null, null, 100));
+        assertThrows(Throwable.class, () -> new Mascota(null, null, null, 20, null, null, 100, null));
         
 
         LOG.info("Finalizando test de datos nulos");
@@ -52,7 +53,7 @@ public class AppTest {
     public void edadNegativa() {
         LOG.info("Iniciado test de Edad negativa");
 
-        assertThrows(Throwable.class, () -> new Mascota("Juan","Caballo","Arabe", -20,"macho", "cafe", 100));
+        assertThrows(Throwable.class, () -> new Mascota("Juan", "Caballo", "arabe", -20, "macho", "cafe", 100, "90"));
 
         LOG.info("Finalizando test de edad negativa");
     }
@@ -61,7 +62,7 @@ public class AppTest {
     public void pesoNegativo() {
         LOG.info("Iniciado test de peso negativo");
 
-        assertThrows(Throwable.class, () -> new Mascota("Juan","Caballo","Arabe", 20,"macho", "cafe", -100));
+        assertThrows(Throwable.class, () -> new Mascota("Juan", "Caballo", "arabe", 20, "macho", "cafe", -100, "90"));
 
         LOG.info("Finalizando test de peso negativo");
     }
