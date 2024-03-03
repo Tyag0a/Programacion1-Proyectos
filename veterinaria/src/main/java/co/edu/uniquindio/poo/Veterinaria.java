@@ -45,20 +45,10 @@ public class Veterinaria {
         }
 
         return existe;
-    }
-
-    public static List<Mascota> mascotasMayoresDe10 (List<Mascota> mascotas){
-        List<Mascota> Mayoresde10 = new ArrayList<>();
-
-        for (Mascota mascota : mascotas){
-            if (mascota.getEdad() > 10){
-                Mayoresde10.add(mascota);
-            }
-        }
-        return Mayoresde10;
-    }      
+    }    
 
     public static void main (String[] args){
+
         List<Mascota> listaMascotas = new ArrayList<Mascota>();
         listaMascotas.add(new Mascota("pedrito", "perro", "salchicha", 16, "macho", "blanco", 30, "01"));
         listaMascotas.add(new Mascota("juan", "caballo", "arabe", 13, "macho", "cafe", 100, "02"));
@@ -66,14 +56,17 @@ public class Veterinaria {
         listaMascotas.add(new Mascota("eduardo", "tortuga", "raza de tortuga random", 8, "macho", "verde", 19, "04"));
         listaMascotas.add(new Mascota("aurora", "conejo", "no se", 5, "hembra", "blanco", 13, "05"));
         listaMascotas.add(new Mascota("eustaquio", "hamster", "no se", 2, "macho", "gris", 19, "06"));
-        /*
-         * podemos agregar a la lista finitas mascotas, estas son de ejemplo para probar la funcionalidad de la condicion y el ciclo que
-         */
-        List<Mascota> mayores = mascotasMayoresDe10(listaMascotas);
 
-        System.out.println("mascotas de veterinaria que son mayores de 10 años:");
-        for (Mascota mascota : mayores) {
-            System.out.println(mascota.num + "," + mascota.nombre + ","+ mascota.especie + "," + mascota.raza + "," + mascota.edad + "," + mascota.genero + "," + mascota.color + "," + mascota.peso +",");
-        }
-    }
+        System.out.println("tenemos " + listaMascotas.size() + " mascotas registradas. ");
+        System.out.println("Lista de mascotas mayores de 10 años:");
+
+        for (int i=0; i < listaMascotas.size(); i++){
+            if (listaMascotas.get(i).getEdad() >= 10){
+                System.out.println("son:" + listaMascotas.get(i).getNombre());
+            }      
+         }  
+
+    }                
+        
+          
 }

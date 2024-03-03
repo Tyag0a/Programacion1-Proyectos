@@ -49,7 +49,26 @@ public class VeterinariaTest {
         assertThrows(Throwable.class, () -> Veterinaria.registrarMascota(mascota2));
 
        LOG.info("Finalizando test de agregar mascota repetida a lista");
-    }  
+    } 
+    
+    @Test
+    public void agregarMascotaNula() {
+        LOG.info("Iniciado test de agregar mascota con datos nulos a lista");
+        /*
+         * prueba para agregar una mascota con edad incorrecta
+         * 
+         */
+        LOG.info("Finalizando test de agregar mascota con datos nulos a lista");
+
+        List<Mascota> listaMascotas = new ArrayList<Mascota>();
+
+        assertThrows(Throwable.class, () -> listaMascotas.add(new Mascota(null, null, null, 0, null, null, 100, null)));
+
+
+
+
+
+    }
 
     
 }
