@@ -21,7 +21,7 @@ public class BoletaentradaTest {
         assertEquals(LocalDate.of(2024, 3, 14), boletaentrada.fecha);
         assertEquals(LocalTime.of(8, 45, 0), boletaentrada.hora);
         assertEquals("Shrek 5", boletaentrada.nombre);
-        assertEquals("30000", boletaentrada.valor);
+        assertEquals(30000, boletaentrada.valor);
     
         LOG.info("Finalizando test datos completos");
     }
