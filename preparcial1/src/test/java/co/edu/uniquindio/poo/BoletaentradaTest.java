@@ -18,10 +18,10 @@ public class BoletaentradaTest {
 
         Boletaentrada boletaentrada = new Boletaentrada(LocalDate.of(2024, 3, 14), LocalTime.of(8, 45, 0), "Shrek 5", 30000);
 
-        assertEquals(LocalDate.of(2024, 3, 14), boletaentrada.fecha);
-        assertEquals(LocalTime.of(8, 45, 0), boletaentrada.hora);
-        assertEquals("Shrek 5", boletaentrada.nombre);
-        assertEquals(30000, boletaentrada.valor);
+        assertEquals(LocalDate.of(2024, 3, 14), boletaentrada.getFecha());
+        assertEquals(LocalTime.of(8, 45, 0), boletaentrada.getHora());
+        assertEquals("Shrek 5", boletaentrada.getNombre());
+        assertEquals(30000, boletaentrada.getValor());
     
         LOG.info("Finalizando test datos completos");
     }
