@@ -15,6 +15,7 @@ public class ParqueInfantil {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.municipio = municipio;
+        this.costo = costo;
         listaZonas = new LinkedList<>();
     }
 
