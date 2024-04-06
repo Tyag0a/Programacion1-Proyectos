@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo;
 
 import java.util.LinkedList;
 import java.util.Collection;
+import java.util.Collections;
 
 public class Proyecto {
     private final String nombre;
@@ -24,6 +25,8 @@ public class Proyecto {
     }
 
     public Collection<ParqueInfantil> getParquesInfantiles() {
-        return listaParquesInfantiles;
+        return Collections.unmodifiableCollection(listaParquesInfantiles);
     }
+
+   
 }

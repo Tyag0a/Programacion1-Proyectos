@@ -8,9 +8,10 @@ public class ParqueInfantil {
     private String nombre;
     private String descripcion;
     private Municipio municipio;
+    public double costo;
     private final Collection<Zona> listaZonas;
     
-    public ParqueInfantil(String nombre, String descripcion, Municipio municipio) {
+    public ParqueInfantil(String nombre, String descripcion, Municipio municipio, double costo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.municipio = municipio;
@@ -32,8 +33,12 @@ public class ParqueInfantil {
     }
 
 
-
     public Collection<Zona> getListaZonas() {
         return listaZonas;
+    }
+
+
+    public double getCosto() {
+        return costo;
     }
 }
