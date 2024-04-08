@@ -62,8 +62,20 @@ public class Proyecto {
                 }
             }
          return null; //* si no se encuntra el nombre retorna un nulo
-     }
-    
+    }
 
+ //* 3er METODO: calcular el valor total del proyecto, suponiendo que se sabe el costo total de cada parque 
+ //* y sumando sus costos, para el costo del parque se tiene que sumar el sobrecosto del municipio y de los materiales teniendo en cuenta el area de las zonas,
+ //* pero no me dio tiempo para hacer un metodo para ello
+
+    public double calcularValorTotalProyecto () {
+        double valorTotal = 0.0;
+        for (ParqueInfantil parque : listaParquesInfantiles){
+            valorTotal = valorTotal + parque.getCosto();
+        }
+        return valorTotal;   
+
+    
+     }
    
 }
