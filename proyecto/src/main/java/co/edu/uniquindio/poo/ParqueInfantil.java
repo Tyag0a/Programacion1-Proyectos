@@ -42,4 +42,5 @@ public class ParqueInfantil {
     public double getCosto() {
         return costo;
     }
+
 }
