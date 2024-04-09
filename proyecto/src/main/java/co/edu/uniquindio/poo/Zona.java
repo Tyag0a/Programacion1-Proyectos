@@ -1,18 +1,18 @@
 package co.edu.uniquindio.poo;
 
 public class Zona {
-    private String nombre;
+    public String nombreZona;
     private Material material;
     FiguraGeometrica figuraGeometrica;
     
-    public Zona(String nombre, Material material, FiguraGeometrica figuraGeometrica) {
-        this.nombre = nombre;
+    public Zona(String nombreZona, Material material, FiguraGeometrica figuraGeometrica) {
+        this.nombreZona = nombreZona;
         this.material = material;
         this.figuraGeometrica = figuraGeometrica;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreZona() {
+        return nombreZona;
     }
     
     public Material getMaterial() {
@@ -27,8 +27,8 @@ public class Zona {
         this.figuraGeometrica = figuraGeometrica;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombreZona) {
+        this.nombreZona = nombreZona;
     }
 
     public void setMaterial(Material material) {

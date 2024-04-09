@@ -51,4 +51,27 @@ public class ParqueInfantil {
         return existe;
     }
 
+    //* metodos para: 1. verificar si una zona existe por el nombre, retornar booleano con if y else
+    //* 2. agregar una zona y verificar si existe con el metodo 1 igualmente con if y else
+
+    public boolean verificarZonaExiste (String nombreZona) {
+        for (Zona zona : listaZonas) {
+            if (zona.getNombreZona().equals(nombreZona)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void agregarZona(Zona zona) {
+
+        if (verificarZonaExiste(zona.getNombreZona())) {
+            System.out.println("Ya se encuentra una zona con el mismo nombre en la lista de zonas");
+        }
+         else {
+            listaZonas.add(zona);
+        }
+
+    }
+
 }
