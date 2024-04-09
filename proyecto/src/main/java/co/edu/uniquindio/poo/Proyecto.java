@@ -34,7 +34,7 @@ public class Proyecto {
     //* 1er METODO: para ordenar la lista de parques de forma ascendente tomando el costo del parque,
     //* por esto hay un nuevo atributo en parqueInfantiles llamado " costo" 
 
-    public void ordenarParquesInfantilesPorCosto() {
+    public void ordenarParquesInfantilesAscendente() {
         //* creo una nueva linkedlist para almacenar los parques ordenados en lista ordenada, una copia de la lista originallll
         //* en collections.sort especificamos que queremos comparar dos objetos de tipo parque infantil (en new comparator)
 
@@ -55,7 +55,7 @@ public class Proyecto {
     
  //* 2do METODO: buscar un parque por su nombre (recorriendo la lista con for y condicionando con if, ademas del getNombre)
 
-    public ParqueInfantil buscarParque(String nombre) {
+    public ParqueInfantil buscarParquePorNombre(String nombre) {
          for (ParqueInfantil parqueInfantil : listaParquesInfantiles) { //* Recorremos la lista con un for each clasico
              if (parqueInfantil.getNombre().equals(nombre)) {  //* Con un if comparamos el nombre de cada parque con un equals y lo obtenemos con el get
                  return parqueInfantil; //* si se encuentra el nombre retorna TODO el parque
@@ -79,13 +79,13 @@ public class Proyecto {
      }
 //* metodo para obtener una lista de parques d un municipio
 //*  tocaria hacer un metodo exactamente igual que este por cada municipio y
-//*  en el argumento de perteneceAMunicipio poner el sobrecosto del municipio, para asi hacer la condicion y agregar el parque a la lista si se cumple
+//*  en el argumento de perteneceAMunicipio poner el nombre del municipio, para asi hacer la condicion y agregar el parque a la lista si se cumple
 
      public List<ParqueInfantil> obtenerParquesPorMunicipio(Municipio municipio) {
         List<ParqueInfantil> parquesPorMunicipio = new LinkedList<>();
 
         for (ParqueInfantil parque : listaParquesInfantiles) {
-            if (parque.perteneceAMunicipio(220000)) {
+            if (parque.perteneceAMunicipio("Armenia")) {
                 parquesPorMunicipio.add(parque);
             }
         }

@@ -43,9 +43,9 @@ public class ParqueInfantil {
         return costo;
     }
 
-    public boolean perteneceAMunicipio(double sobreCosto) {
+    public boolean perteneceAMunicipio(String nombreMunicipio) {
         boolean existe = false;
-        if (this.municipio.getSobreCosto() == sobreCosto) {
+        if (this.municipio.getNombreMunicipio() == nombreMunicipio) {
             existe = true;
         }
         return existe;

@@ -2,20 +2,28 @@ package co.edu.uniquindio.poo;
 
 public enum Municipio {
 
-    ARMENIA(0),CALARCA(100000),MONTENEGRO(200000),QUIMBAYA(300000),
-    TEBAIDA(150000),CIRCASIA(180000),FILANDIA(220000),
-    GENOVA(700000),SALENTO(500000),PIJAO(400000),CORDOBA(300000),
-    BUENAVISTA(350000);
+    ARMENIA("Armenia",0),CALARCA("Calarca",100000),
+    MONTENEGRO("Montenegro",200000),QUIMBAYA("Quimbaya",300000),
+    TEBAIDA("Tebaida",150000),CIRCASIA("Circacia",180000),
+    FILANDIA("Filandia",220000),GENOVA("Genova",700000),
+    SALENTO("Salento",0000);
 
-//* atributo "sobrecosto" para poder darle un valor a cada municipio, y este se pueda obtener retornandolo
+//* atributo "sobrecosto" para poder darle un valor a cada municipio,
+//* Y atributo nombre para poder cumplir uno de los requisitos del problema
 
-    private final int sobreCosto;
+    private final String nombreMunicipio;
+    private final double sobreCosto;
 
-    public int getSobreCosto() {
+    public double getSobreCosto() {
         return sobreCosto;
     }
 
-    Municipio(int sobreCosto) {
+    public String getNombreMunicipio() {
+        return nombreMunicipio;
+    }
+
+    Municipio(String nombreMunicipio, double sobreCosto) {
+        this.nombreMunicipio = nombreMunicipio;
         this.sobreCosto = sobreCosto;
     }
     
