@@ -19,5 +19,13 @@ public class Triangulo extends FiguraGeometrica {
     public static double getAltura() {
         return altura;
     }
+
+    public static void setBase(double base) {
+        Triangulo.base = base;
+    }
+
+    public static void setAltura(double altura) {
+        Triangulo.altura = altura;
+    }
     
 }

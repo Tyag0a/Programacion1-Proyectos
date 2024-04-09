@@ -13,5 +13,9 @@ public class Circulo extends FiguraGeometrica {
     public static double getRadio() {
         return radio;
     }
+
+    public static void setRadio(double radio) {
+        Circulo.radio = radio;
+    }
     
 }

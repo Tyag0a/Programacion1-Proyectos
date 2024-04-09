@@ -7,16 +7,17 @@ public enum Municipio {
     GENOVA(700000),SALENTO(500000),PIJAO(400000),CORDOBA(300000),
     BUENAVISTA(350000);
 
-//* Hice un atributo "sobrecosto" para poder darle un valor a cada municipio, y este se pueda obtener retornandolo
+//* atributo "sobrecosto" para poder darle un valor a cada municipio, y este se pueda obtener retornandolo
 
     private final int sobreCosto;
+
+    public int getSobreCosto() {
+        return sobreCosto;
+    }
 
     Municipio(int sobreCosto) {
         this.sobreCosto = sobreCosto;
     }
-
-    public int retornarSobrecosto() {
-        return sobreCosto;
-    }
+    
     
 }

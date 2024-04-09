@@ -27,7 +27,7 @@ public class Proyecto {
         return costoTotal;
     }
 
-    public Collection<ParqueInfantil> getParquesInfantiles() {
+    public Collection<ParqueInfantil> getListaParquesInfantiles() {
         return Collections.unmodifiableCollection(listaParquesInfantiles);
     }
 
@@ -77,5 +77,20 @@ public class Proyecto {
 
     
      }
+//* metodo para obtener una lista de parques d un municipio
+//*  tocaria hacer un metodo exactamente igual que este por cada municipio y
+//*  en el argumento de perteneceAMunicipio poner el sobrecosto del municipio, para asi hacer la condicion y agregar el parque a la lista si se cumple
+
+     public List<ParqueInfantil> obtenerParquesPorMunicipio(Municipio municipio) {
+        List<ParqueInfantil> parquesPorMunicipio = new LinkedList<>();
+
+        for (ParqueInfantil parque : listaParquesInfantiles) {
+            if (parque.perteneceAMunicipio(220000)) {
+                parquesPorMunicipio.add(parque);
+            }
+        }
+
+        return parquesPorMunicipio;
+    }
    
 }

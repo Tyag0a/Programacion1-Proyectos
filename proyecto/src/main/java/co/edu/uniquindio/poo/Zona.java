@@ -23,4 +23,16 @@ public class Zona {
         return figuraGeometrica;
     }
 
+    public void setFiguraGeometrica(FiguraGeometrica figuraGeometrica) {
+        this.figuraGeometrica = figuraGeometrica;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
 }

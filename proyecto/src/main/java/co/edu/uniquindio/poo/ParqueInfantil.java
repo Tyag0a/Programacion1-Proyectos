@@ -5,6 +5,7 @@ import java.util.Collection;
 
 public class ParqueInfantil {
 
+    //* atributos, constructores, metodos y lista de las zonas
     private String nombre;
     private String descripcion;
     private Municipio municipio;
@@ -38,9 +39,16 @@ public class ParqueInfantil {
         return listaZonas;
     }
 
-
     public double getCosto() {
         return costo;
+    }
+
+    public boolean perteneceAMunicipio(double sobreCosto) {
+        boolean existe = false;
+        if (this.municipio.getSobreCosto() == sobreCosto) {
+            existe = true;
+        }
+        return existe;
     }
 
 }

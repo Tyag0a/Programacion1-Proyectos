@@ -14,5 +14,9 @@ public class Cuadrado extends FiguraGeometrica {
     public static double getLado() {
         return lado;
     }
+
+    public static void setLado(double lado) {
+        Cuadrado.lado = lado;
+    }
     
 }

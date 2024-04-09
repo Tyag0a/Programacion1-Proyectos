@@ -19,5 +19,13 @@ public class Rectangulo extends FiguraGeometrica{
     public static double getAlto() {
         return alto;
     }
+
+    public static void setAncho(double ancho) {
+        Rectangulo.ancho = ancho;
+    }
+
+    public static void setAlto(double alto) {
+        Rectangulo.alto = alto;
+    }
     
 }
