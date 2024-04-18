@@ -38,13 +38,30 @@ public class Drogueria {
         listaEmpleados = new LinkedList<>();
     }
 
-    public void agregarProducto (Producto producto) {
+    public void agregarProducto (Producto producto) { //Agregar producto a la lista
         listaProductos.add(producto);
 
     }
 
-    public void eliminarProducto (Producto producto) {
+    public void eliminarProducto (Producto producto) { //eliminar producto de la lista
         listaProductos.remove(producto);
+
+    }
+
+    /*
+     * Metodo para obtener los productos con un stock mayor a 100 y meterlos en una lista, luego retornarla
+     */
+
+    public List<Producto> productosStockMayor100() {
+        List<Producto> listaProductosStockMayor100 = new LinkedList<>();
+
+        for (Producto producto : listaProductos) {
+
+            if (producto.getStock() > 100) {
+                listaProductosStockMayor100.add(producto);
+            }
+        }
+        return listaProductosStockMayor100;
 
     }
     

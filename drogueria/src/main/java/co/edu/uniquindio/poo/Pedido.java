@@ -36,4 +36,7 @@ public class Pedido {
         this.clientePedido = clientePedido;
     }
     
+    //*Metodo para calcular costo total de un pedido
+    //*
+    
 }
