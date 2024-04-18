@@ -38,6 +38,15 @@ public class FiguraGeometrica {
 
         return areaCirculo;
 
-    }    
-
+    } 
+    
 }
+
+    /*
+     * 
+     * clase: public abstract class figurageometrica
+     * metodo: public abstract double calculararea (  )
+     * 
+     * public double calculararea () {
+     *  return math.PI * math.pow(radio,2)
+     */
