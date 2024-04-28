@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo;
 
+
 public class Producto {
 
     public Producto(String codigoProducto, String nombre, String descripcion, double precio, int stock,
@@ -42,5 +43,6 @@ public class Producto {
     public String getCodigoProducto() {
         return codigoProducto;
     }
+
     
 }
