@@ -14,12 +14,22 @@ public class CuentaAhorros extends CuentaBancaria {
     }
 
     @Override
-    public void depositar() {
+    public void depositar(double valor) {
+        assert valor > 0;
+        saldo = saldo + valor;
+        estado = true;
      
     }
 
     @Override
-    public void retirar() {
+    public void retirar(double valor) {
+        assert valor > 0;
+        assert valor <= saldo :"El valor a retirar no debe superar el saldo disponible";
+        saldo = saldo - valor;
+
+        if (saldo <= 0){
+            estado = false;
+        }
    
     }
 

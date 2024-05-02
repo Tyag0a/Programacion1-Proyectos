@@ -45,7 +45,7 @@ public abstract class CuentaBancaria {
 
     //* Metodos abstractos de retirar y depositar para sobreescribir en clases hijas
 
-     public abstract void depositar();
-     public abstract void retirar();
+     public abstract void depositar(double valor);
+     public abstract void retirar(double valor);
     
 }

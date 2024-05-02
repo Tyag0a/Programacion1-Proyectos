@@ -17,18 +17,26 @@ public class CuentaCorriente extends CuentaBancaria {
         this.sobreGiro = sobreGiro;
     }
 
-
-
-
     
     @Override
-    public void depositar() {
+    public void depositar(double valor) {
+        assert valor > 0;
+        saldo = saldo + valor;
+        estado = true;
      
     }
 
     @Override
-    public void retirar() {
+    public void retirar(double valor) {
+        assert valor > 0;
+        assert valor <= saldo + sobreGiro;
+        if (saldo < valor){
+            saldo = ((saldo + sobreGiro) - sobreGiro - valor);
+        }
 
+        if (saldo <= 0){
+            estado = false;
+        }
     }
     
 }
