@@ -17,10 +17,12 @@ public class CuentaCorriente extends CuentaBancaria {
         this.sobreGiro = sobreGiro;
     }
 
+    //Metodos para retirar o depositar dinero a la cuenta de ahorros
+
     
     @Override
     public void depositar(Transaccion transaccion) {
-        assert transaccion.getValor() > 0;
+        assert transaccion.getValor() > 0 :"No se puede depositar una cantidad negativa o nula de dinero";
         saldo = saldo + transaccion.getValor();
         estado = true;
      
@@ -29,7 +31,7 @@ public class CuentaCorriente extends CuentaBancaria {
     @Override
     public void retirar(Transaccion transaccion) {
         assert transaccion.getValor() > 0;
-        assert transaccion.getValor() <= saldo + sobreGiro;
+        assert transaccion.getValor() <= saldo + sobreGiro :"El valor a retirar no debe superar el saldo disponible";
         if (saldo < transaccion.getValor()){
             saldo = ((saldo + sobreGiro) - sobreGiro - transaccion.getValor());
         }

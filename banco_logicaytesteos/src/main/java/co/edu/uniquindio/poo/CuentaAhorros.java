@@ -14,9 +14,11 @@ public class CuentaAhorros extends CuentaBancaria {
         return tasaInteres;
     }
 
+    //Metodos para retirar o depositar dinero a la cuenta de ahorros
+
     @Override
     public void depositar(Transaccion transaccion) {
-        assert transaccion.getValor() > 0;
+        assert transaccion.getValor() > 0 :"No se puede depositar una cantidad negativa o nula de dinero";
         saldo = saldo + transaccion.getValor();
         estado = true;
      
