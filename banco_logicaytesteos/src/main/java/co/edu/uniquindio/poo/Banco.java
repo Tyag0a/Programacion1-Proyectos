@@ -33,18 +33,65 @@ public class Banco {
         this.listaCuentas = listaCuentas;
     }
 
-   // public boolean verificarCuentaExiste(String numeroCuenta){
-   //    Predicate<CuentaBancaria> cuentaIgual = cuentaAhorros -> cuentaAhorros.getNumeroCuenta().equals(numeroCuenta);
-   //     return cuentaAhorros.stream().filter(cuentaIgual) .findAny() .isPresent();
-   // }
+    //Metodo para verificar si una cuenta existe
+
+    public boolean verificarCuentaExiste (CuentaBancaria cuenta) {
+
+        return listaCuentas.contains(cuenta);
+    }
+    //Metodo para verificar actividad de una cuenta
+
+    public boolean estaActiva(CuentaBancaria cuenta) {
+        return cuenta.getSaldo() > 0;
+    }
+
+    //Metodo para transferir saldo de una cuenta a otra
+
+    public void transferirSaldoCuentas (CuentaBancaria cuentaOrigen, CuentaBancaria cuentaDestino,
+     Transaccion transaccion) {
+
+        if (!verificarCuentaExiste(cuentaDestino)) {
+            System.out.println("La cuenta a la que se desea transferir no existe");
+            return; //se utiliza este return para salir del metodo si la cuenta no existe
+                    // y no realizar la trasnferencia 
+        }
+
+        double valorTransaccion = transaccion.getValor();
+
+        if (transaccion.getTipoTransaccion() == TipoTransaccion.TRANSFERIR &&
+         cuentaOrigen.getSaldo() < valorTransaccion){
+            System.out.println("No tienes el saldo suficiente para realizar la transferencia");
+            return;
+
+        }
+
+        if (transaccion.getTipoTransaccion() == TipoTransaccion.TRANSFERIR) {
+            cuentaOrigen.setSaldo(cuentaOrigen.getSaldo() - valorTransaccion);
+            cuentaDestino.setSaldo(cuentaDestino.getSaldo() + valorTransaccion);
+            System.out.println("Transferencia exitosa de " + valorTransaccion + " $ a la cuenta destino.");
+
+        }
+   }
+
+   //Metodo para consultar si una cuenta esta activa
+
+   public double consultarSaldo (CuentaBancaria cuenta){
+    
+    if (estaActiva(cuenta)){
+        return cuenta.getSaldo();
+   
+    } else {
+        System.out.println("La cuenta no se encuentra activa");
+        return 0;
+
+    }
+ }
 
 
+    @Override
+    public String toString() {
+        return "Banco [nombre=" + nombre + "]";
+    }
 
-
-   // public double consultarSaldo (double saldo) {
-
-   //     return saldo;
-
-   // }
     
 }

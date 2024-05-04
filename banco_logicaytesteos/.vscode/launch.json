@@ -15,7 +15,7 @@
             "name": "App",
             "request": "launch",
             "mainClass": "co.edu.uniquindio.poo.App",
-            "projectName": "parcial2_banco"
+            "projectName": "banco_logicaytesteos"
         }
     ]
 }
