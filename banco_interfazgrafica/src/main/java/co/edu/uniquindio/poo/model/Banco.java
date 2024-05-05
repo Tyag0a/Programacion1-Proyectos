@@ -86,10 +86,18 @@ public class Banco {
     }
  }
 
-
     @Override
     public String toString() {
         return "Banco [nombre=" + nombre + "]";
     }
-    
+
+    public void guardarCuenta (CuentaBancaria cuenta) {
+        if (!verificarCuentaExiste(cuenta)) {
+            listaCuentas.add(cuenta);
+            System.out.println("Cuenta bancaria registrada exitosamente en el sistema");
+        } else {
+            System.out.println("La cuenta bancaria ya existe en el sistema");
+        }
+
+    }
 }

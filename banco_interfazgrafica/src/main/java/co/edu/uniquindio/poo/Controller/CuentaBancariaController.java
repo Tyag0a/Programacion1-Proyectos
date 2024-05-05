@@ -2,7 +2,9 @@ package co.edu.uniquindio.poo.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import java.io.IOException;
+
+import co.edu.uniquindio.poo.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -34,23 +36,13 @@ public class CuentaBancariaController {
     private TextField txTipoCuenta;
 
     @FXML
-    void crearCuenta(ActionEvent event) {
-        System.out.println("Cuenta Registrada Correctamente ;D");
-
+    void crearCuenta() throws IOException {
+        App.setRoot("secondary");
     }
-
-
 
     @FXML
     void initialize() {
-        assert btnCrearCuenta != null : "fx:id=\"btnCrearCuenta\" was not injected: check your FXML file 'viewCuentaBancaria.fxml'.";
-        assert txApellido != null : "fx:id=\"txApellido\" was not injected: check your FXML file 'viewCuentaBancaria.fxml'.";
-        assert txNombre != null : "fx:id=\"txNombre\" was not injected: check your FXML file 'viewCuentaBancaria.fxml'.";
-        assert txNumeroCuenta != null : "fx:id=\"txNumeroCuenta\" was not injected: check your FXML file 'viewCuentaBancaria.fxml'.";
-        assert txSaldo != null : "fx:id=\"txSaldo\" was not injected: check your FXML file 'viewCuentaBancaria.fxml'.";
-        assert txTipoCuenta != null : "fx:id=\"txTipoCuenta\" was not injected: check your FXML file 'viewCuentaBancaria.fxml'.";
 
     }
 
 }
-
